@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--This is the parent layout, everything underneath is child of this layout. The screen is the parent-->
+<!--This is the root element and so it must specify the Android resource XML namespace-->
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
@@ -9,17 +11,20 @@
   android:orientation="vertical"
   tools:context=".QuizActivity">
 
+  <!-- Displays the text view with padding to give it more room-->
   <TextView
+    android:id="@+id/question_text_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="24dp"
-    android:text="@string/question_text"/>
+    android:padding="24dp"/>
 
+  <!--This creates another child of the first linear layout, but with a different orientation which changes the resulting view-->
   <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
+    <!--Creates a button with an id which can be referenced through the R class-->
     <Button
       android:id="@+id/true_button"
       android:layout_width="wrap_content"
@@ -31,7 +36,12 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/false_button"/>
-
   </LinearLayout>
+
+  <Button
+    android:id="@+id/next_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/next_button"/>
 
 </LinearLayout>
